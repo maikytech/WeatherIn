@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		65D1BDEF2667ECB300EB09C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1BDEE2667ECB300EB09C7 /* AppDelegate.swift */; };
-		65D1BDF12667ECB300EB09C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1BDF02667ECB300EB09C7 /* SceneDelegate.swift */; };
 		65D1BDF32667ECB300EB09C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1BDF22667ECB300EB09C7 /* ViewController.swift */; };
 		65D1BDF62667ECB300EB09C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D1BDF42667ECB300EB09C7 /* Main.storyboard */; };
 		65D1BDF82667ECB400EB09C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D1BDF72667ECB400EB09C7 /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 		4B93F86013D838710A92D7E6 /* Pods-WeatherIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherIn.release.xcconfig"; path = "Target Support Files/Pods-WeatherIn/Pods-WeatherIn.release.xcconfig"; sourceTree = "<group>"; };
 		65D1BDEB2667ECB300EB09C7 /* WeatherIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D1BDEE2667ECB300EB09C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65D1BDF02667ECB300EB09C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		65D1BDF22667ECB300EB09C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65D1BDF52667ECB300EB09C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65D1BDF72667ECB400EB09C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				65D1BDEE2667ECB300EB09C7 /* AppDelegate.swift */,
-				65D1BDF02667ECB300EB09C7 /* SceneDelegate.swift */,
 				65D1BDF22667ECB300EB09C7 /* ViewController.swift */,
 				65D1BDF42667ECB300EB09C7 /* Main.storyboard */,
 				65D1BDF72667ECB400EB09C7 /* Assets.xcassets */,
@@ -88,7 +85,6 @@
 				0662CFBC4AFD59D35F39C140 /* Pods-WeatherIn.debug.xcconfig */,
 				4B93F86013D838710A92D7E6 /* Pods-WeatherIn.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +204,6 @@
 			files = (
 				65D1BDF32667ECB300EB09C7 /* ViewController.swift in Sources */,
 				65D1BDEF2667ECB300EB09C7 /* AppDelegate.swift in Sources */,
-				65D1BDF12667ECB300EB09C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR8ENK43BV;
 				INFOPLIST_FILE = WeatherIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PosetoStudio.WeatherIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -379,6 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR8ENK43BV;
 				INFOPLIST_FILE = WeatherIn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PosetoStudio.WeatherIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
