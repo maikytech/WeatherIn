@@ -14,18 +14,15 @@ class SearchViewController: UIViewController {
     
     //MARK: - Properties
     private let cellId = "SearchTableViewCell"
-    private var dataSource = [City]()
+    var viewModel = ViewModelSearch()
     
-    
-
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        getCity()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.tableView.reloadData()
-        }
+        configureView()
+        bind()
     }
     
     func setupUI() {
@@ -34,14 +31,15 @@ class SearchViewController: UIViewController {
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
     
-    func getCity() {
-        
-        NetworkingProvider.shared.getCity(cityString: "san") { (city) in
-            self.dataSource = city
-            print(self.dataSource)
-            
-        } failure: { (error) in
-            print(error.debugDescription)
+    private func configureView() {
+        viewModel.getCity(cityString: "lon")
+    }
+    
+    private func bind() {
+        viewModel.refreshData = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
 }
@@ -49,15 +47,19 @@ class SearchViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+       
+        return viewModel.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId)!
+        let object = viewModel.dataSource[indexPath.row]
         
         if let cell = cell as? SearchTableViewCell {
-            cell.titleLabel.text = dataSource[indexPath.row].title
-            cell.locationTypeLabel.text = dataSource[indexPath.row].location_type
+
+            cell.titleLabel.text = object.title
+            cell.locationTypeLabel.text = object.location_type
         }
         
         return cell

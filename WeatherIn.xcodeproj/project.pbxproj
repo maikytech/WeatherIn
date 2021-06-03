@@ -93,10 +93,8 @@
 		652CC56226685A0B003B1DE8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				652CC56F26686E51003B1DE8 /* Cell */,
-				652CC56326685A63003B1DE8 /* Search.storyboard */,
-				652CC56726686160003B1DE8 /* SearchViewController.swift */,
-				653169EB26687EDD00A53B98 /* ViewModelSearch.swift */,
+				6593495A266911B900186A22 /* ViewSearch */,
+				6593495B266911F400186A22 /* ViewModelSearch */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -108,6 +106,24 @@
 				652CC56A26686E38003B1DE8 /* SearchTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6593495A266911B900186A22 /* ViewSearch */ = {
+			isa = PBXGroup;
+			children = (
+				652CC56F26686E51003B1DE8 /* Cell */,
+				652CC56326685A63003B1DE8 /* Search.storyboard */,
+				652CC56726686160003B1DE8 /* SearchViewController.swift */,
+			);
+			path = ViewSearch;
+			sourceTree = "<group>";
+		};
+		6593495B266911F400186A22 /* ViewModelSearch */ = {
+			isa = PBXGroup;
+			children = (
+				653169EB26687EDD00A53B98 /* ViewModelSearch.swift */,
+			);
+			path = ViewModelSearch;
 			sourceTree = "<group>";
 		};
 		65D1BDE22667ECB300EB09C7 = {
@@ -131,10 +147,10 @@
 		65D1BDED2667ECB300EB09C7 /* WeatherIn */ = {
 			isa = PBXGroup;
 			children = (
+				652CC54F26681A52003B1DE8 /* Models */,
 				652CC561266858F4003B1DE8 /* Modules */,
 				652CC55B26685539003B1DE8 /* Commons */,
 				652CC55026681A5D003B1DE8 /* Networking */,
-				652CC54F26681A52003B1DE8 /* Models */,
 				65D1BDFC2667ECB400EB09C7 /* Info.plist */,
 			);
 			path = WeatherIn;
