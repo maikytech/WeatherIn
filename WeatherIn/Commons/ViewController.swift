@@ -9,16 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCity()
+        //getCity()
     }
     
     func getCity() {
         
         NetworkingProvider.shared.getCity(cityString: "san") { (city) in
             print(city)
+            
         } failure: { (error) in
             print(error.debugDescription)
         }
