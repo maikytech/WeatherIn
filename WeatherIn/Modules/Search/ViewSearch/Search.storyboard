@@ -40,12 +40,30 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="LR2-Fg-lt1"/>
                     <connections>
+                        <outlet property="searchBar" destination="83a-FB-H9P" id="8jR-b3-Pqj"/>
                         <outlet property="tableView" destination="GyY-2y-Dh3" id="w3Y-5T-FDS"/>
+                        <segue destination="1Yo-e3-IDT" kind="show" identifier="goToForecastCityViewController" id="8LB-Z4-uZ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFd-IU-2Vl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073.913043478261" y="121.875"/>
+        </scene>
+        <!--Forecast City View Controller-->
+        <scene sceneID="IQs-86-u7j">
+            <objects>
+                <viewController id="1Yo-e3-IDT" customClass="ForecastCityViewController" customModule="WeatherIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cm1-mS-6ne">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dnR-y8-09y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gvB-BW-W6f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgo-Iv-PLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SNL-ly-qBu">

@@ -12,13 +12,14 @@ final class NetworkingProvider {
     
     static let shared = NetworkingProvider()
     
-    private let kBaseUrl = "https://www.metaweather.com/api/location/"
-    private let kSearch = "search/?query="
+//    private let kBaseUrl = "https://www.metaweather.com/api/location/"
+//    private let kSearch = "search/?query="
     private let kStatusOk = 200...299
     
     func getCity(cityString: String, success: @escaping (_ city: [City]) -> (), failure: @escaping (_ error: Error?) -> ()) {
         
-        let url = "\(kBaseUrl)\(kSearch)\(cityString)"
+        //let url = "\(kBaseUrl)\(kSearch)\(cityString)"
+        let url = "\(EndPoints.domain)\(EndPoints.search)\(cityString)"
         
         AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: [City].self) { response in
             
@@ -26,6 +27,24 @@ final class NetworkingProvider {
                 success(city)
             }else {
                 failure(response.error)
+            }
+            
+        }
+    }
+    
+    func getForecast(woeid: Int, success: @escaping (_ forecast: Forecast) -> (), failure: @escaping (_ error: Error?) -> ()) {
+        
+        //let url = "\(kBaseUrl)\(kSearch)\(cityString)"
+        let woeidString = String(woeid)
+        let url = "\(EndPoints.domain)\(woeidString)"
+        
+        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: Forecast.self) { response in
+            
+            if let forecast = response.value {
+                success(forecast)
+            }else {
+                failure(response.error)
+                print("Error de Networking Forecast")
             }
             
         }

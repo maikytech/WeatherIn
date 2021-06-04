@@ -11,9 +11,11 @@ class SearchViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: - Properties
     private let cellId = "SearchTableViewCell"
+    //private var searchText:String
     var viewModel = ViewModelSearch()
     
     //MARK: - ViewDidLoad
@@ -21,14 +23,17 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        configureView()
+        //configureView()
         bind()
     }
     
     func setupUI() {
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+        
+        searchBar.delegate = self
     }
     
     private func configureView() {
@@ -39,6 +44,17 @@ class SearchViewController: UIViewController {
         viewModel.refreshData = { [weak self] () in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToForecastCityViewController" {
+            if let destiny = segue.destination as? ForecastCityViewController {
+                if let index = sender as? Int {
+                    let value = viewModel.dataSource[index].woeid
+                    destiny.woeid = value!
+                }
             }
         }
     }
@@ -63,5 +79,26 @@ extension SearchViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension SearchViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToForecastCityViewController", sender: indexPath.row)
+    }
+}
+
+//MARK: - UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        let searchText = searchBar.text!
+        if (searchText != "") {
+            viewModel.getCity(cityString: searchText)
+        }
     }
 }
