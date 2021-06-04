@@ -12,32 +12,29 @@ class SearchViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
-    private let cellId = "SearchTableViewCell"
-    //private var searchText:String
     var viewModel = ViewModelSearch()
+    private let cellId = "SearchTableViewCell"
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        //configureView()
         bind()
     }
     
     func setupUI() {
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
+        searchBar.delegate = self
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
-        
-        searchBar.delegate = self
-    }
-    
-    private func configureView() {
-        viewModel.getCity(cityString: "lon")
     }
     
     private func bind() {
@@ -53,7 +50,9 @@ class SearchViewController: UIViewController {
             if let destiny = segue.destination as? ForecastCityViewController {
                 if let index = sender as? Int {
                     let value = viewModel.dataSource[index].woeid
+                    let value2 = viewModel.dataSource[index].title
                     destiny.woeid = value!
+                    destiny.city = value2!
                 }
             }
         }
@@ -63,7 +62,6 @@ class SearchViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return viewModel.dataSource.count
     }
     
@@ -98,6 +96,8 @@ extension SearchViewController: UISearchBarDelegate {
         
         let searchText = searchBar.text!
         if (searchText != "") {
+            //activityIndicator.hidesWhenStopped = false
+            activityIndicator.startAnimating()
             viewModel.getCity(cityString: searchText)
         }
     }

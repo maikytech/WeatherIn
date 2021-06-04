@@ -32,16 +32,17 @@ final class NetworkingProvider {
         }
     }
     
-    func getForecast(woeid: Int, success: @escaping (_ forecast: Forecast) -> (), failure: @escaping (_ error: Error?) -> ()) {
+    func getForecast(woeid: Int, success: @escaping (_ consolidatedWeather: [consolidatedWeather]) -> (), failure: @escaping (_ error: Error?) -> ()) {
         
         //let url = "\(kBaseUrl)\(kSearch)\(cityString)"
         let woeidString = String(woeid)
         let url = "\(EndPoints.domain)\(woeidString)"
         
-        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: Forecast.self) { response in
+        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: Forecast.self, decoder: DateDecoder()) { response in
             
-            if let forecast = response.value {
-                success(forecast)
+            if let consolidatedWeather = response.value?.consolidated_weather {
+                success(consolidatedWeather)
+                
             }else {
                 failure(response.error)
                 print("Error de Networking Forecast")

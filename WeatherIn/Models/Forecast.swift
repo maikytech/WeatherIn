@@ -33,10 +33,10 @@ struct Forecast: Decodable {
 struct consolidatedWeather: Decodable {
     let weather_state_name: String?
     let weather_state_abbr: String?
-    //let applicable_date: Date?
-    let min_temp: Double
-    let max_temp: Double
-    let humidity: Int
+    let applicable_date: Date?
+    let min_temp: Double?
+    let max_temp: Double?
+    let humidity: Int?
 }
 
 

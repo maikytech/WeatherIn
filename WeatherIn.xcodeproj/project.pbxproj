@@ -15,12 +15,16 @@
 		652CC56C26686E38003B1DE8 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CC56A26686E38003B1DE8 /* SearchTableViewCell.swift */; };
 		652CC56D26686E38003B1DE8 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 652CC56B26686E38003B1DE8 /* SearchTableViewCell.xib */; };
 		653169EC26687EDD00A53B98 /* ViewModelSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653169EB26687EDD00A53B98 /* ViewModelSearch.swift */; };
+		65AF5313266A606B008BAB54 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF5312266A606B008BAB54 /* DateDecoder.swift */; };
 		65D1BDEF2667ECB300EB09C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1BDEE2667ECB300EB09C7 /* AppDelegate.swift */; };
 		65D1BDF32667ECB300EB09C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1BDF22667ECB300EB09C7 /* ViewController.swift */; };
 		65D1BDF82667ECB400EB09C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D1BDF72667ECB400EB09C7 /* Assets.xcassets */; };
 		65D1BDFB2667ECB400EB09C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D1BDF92667ECB400EB09C7 /* LaunchScreen.storyboard */; };
 		65FEF9DA266942C2007CE3BA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEF9D9266942C2007CE3BA /* Forecast.swift */; };
 		65FEF9F02669B2FF007CE3BA /* ForecastCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEF9EF2669B2FF007CE3BA /* ForecastCityViewController.swift */; };
+		65FEF9F92669B686007CE3BA /* ViewModelForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEF9F82669B686007CE3BA /* ViewModelForecast.swift */; };
+		65FEFA012669C06A007CE3BA /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEF9FF2669C06A007CE3BA /* ForecastTableViewCell.swift */; };
+		65FEFA022669C06A007CE3BA /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFA002669C06A007CE3BA /* ForecastTableViewCell.xib */; };
 		FFD4C64AE45FB6C0122C50BD /* Pods_WeatherIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065898D6011B78EF7C738534 /* Pods_WeatherIn.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,7 @@
 		652CC56A26686E38003B1DE8 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		652CC56B26686E38003B1DE8 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		653169EB26687EDD00A53B98 /* ViewModelSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSearch.swift; sourceTree = "<group>"; };
+		65AF5312266A606B008BAB54 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		65D1BDEB2667ECB300EB09C7 /* WeatherIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D1BDEE2667ECB300EB09C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65D1BDF22667ECB300EB09C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		65D1BDFC2667ECB400EB09C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FEF9D9266942C2007CE3BA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		65FEF9EF2669B2FF007CE3BA /* ForecastCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCityViewController.swift; sourceTree = "<group>"; };
+		65FEF9F82669B686007CE3BA /* ViewModelForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelForecast.swift; sourceTree = "<group>"; };
+		65FEF9FF2669C06A007CE3BA /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		65FEFA002669C06A007CE3BA /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				652CC551266832BD003B1DE8 /* NetworkingProvider.swift */,
+				65AF5312266A606B008BAB54 /* DateDecoder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -174,6 +183,7 @@
 		65FEF9E3266946EC007CE3BA /* ViewForecast */ = {
 			isa = PBXGroup;
 			children = (
+				65FEF9FE2669C032007CE3BA /* Cell */,
 				65FEF9EF2669B2FF007CE3BA /* ForecastCityViewController.swift */,
 			);
 			path = ViewForecast;
@@ -182,8 +192,18 @@
 		65FEF9E42669471C007CE3BA /* ViewModelForecast */ = {
 			isa = PBXGroup;
 			children = (
+				65FEF9F82669B686007CE3BA /* ViewModelForecast.swift */,
 			);
 			path = ViewModelForecast;
+			sourceTree = "<group>";
+		};
+		65FEF9FE2669C032007CE3BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65FEF9FF2669C06A007CE3BA /* ForecastTableViewCell.swift */,
+				65FEFA002669C06A007CE3BA /* ForecastTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A971FD4E86780E3FC5A3F25F /* Frameworks */ = {
@@ -262,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FEFA022669C06A007CE3BA /* ForecastTableViewCell.xib in Resources */,
 				65D1BDFB2667ECB400EB09C7 /* LaunchScreen.storyboard in Resources */,
 				652CC56D26686E38003B1DE8 /* SearchTableViewCell.xib in Resources */,
 				652CC56426685A63003B1DE8 /* Search.storyboard in Resources */,
@@ -318,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FEFA012669C06A007CE3BA /* ForecastTableViewCell.swift in Sources */,
 				652CC56826686160003B1DE8 /* SearchViewController.swift in Sources */,
 				65D1BDF32667ECB300EB09C7 /* ViewController.swift in Sources */,
 				653169EC26687EDD00A53B98 /* ViewModelSearch.swift in Sources */,
@@ -325,6 +347,8 @@
 				652CC54A26681665003B1DE8 /* EndPoints.swift in Sources */,
 				65FEF9DA266942C2007CE3BA /* Forecast.swift in Sources */,
 				652CC54D266819DD003B1DE8 /* City.swift in Sources */,
+				65AF5313266A606B008BAB54 /* DateDecoder.swift in Sources */,
+				65FEF9F92669B686007CE3BA /* ViewModelForecast.swift in Sources */,
 				652CC552266832BD003B1DE8 /* NetworkingProvider.swift in Sources */,
 				65D1BDEF2667ECB300EB09C7 /* AppDelegate.swift in Sources */,
 				652CC56C26686E38003B1DE8 /* SearchTableViewCell.swift in Sources */,
