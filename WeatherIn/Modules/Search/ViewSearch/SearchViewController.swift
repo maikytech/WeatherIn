@@ -62,6 +62,7 @@ class SearchViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         return viewModel.dataSource.count
     }
     
@@ -94,11 +95,11 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
+        activityIndicator.startAnimating()
+        
         let searchText = searchBar.text!
         if (searchText != "") {
-            //activityIndicator.hidesWhenStopped = false
-            activityIndicator.startAnimating()
-            viewModel.getCity(cityString: searchText)
+            viewModel.getCity(cityString: searchText, activityIndicator: activityIndicator)
         }
     }
 }

@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewModelSearch {
+    
+    var activityIndicator:UIActivityIndicatorView?
     
     var refreshData = {
         () -> () in
@@ -20,10 +23,13 @@ class ViewModelSearch {
         }
     }
     
-    func getCity(cityString: String) {
+    func getCity(cityString: String, activityIndicator: UIActivityIndicatorView) {
         
         NetworkingProvider.shared.getCity(cityString: cityString) { (city) in
             self.dataSource = city
+            self.activityIndicator = activityIndicator
+            activityIndicator.stopAnimating()
+            
             
         } failure: { (error) in
             print(error.debugDescription)

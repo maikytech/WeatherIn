@@ -18,6 +18,7 @@ class ForecastCityViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
+    let formatter = DateFormatter()
     var woeid:Int = 0
     var city:String = "No pasaron los datos"
     var dataSource:[consolidatedWeather]?
@@ -33,18 +34,22 @@ class ForecastCityViewController: UIViewController {
         setupUI()
         configureView()
         bind()
+        dayOfWeek()
     }
     
-    func setupUI() {
-         
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
+    private func setupUI() {
         
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
         cityLabel.text = city
         
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
     }
     
     private func configureView() {
+        
+        activityIndicator.startAnimating()
         viewModel.getForecast(woeid: woeid)
     }
     
@@ -54,6 +59,13 @@ class ForecastCityViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+    }
+    
+    private func dayOfWeek() {
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "EEEE"
     }
 }
 
@@ -69,12 +81,20 @@ extension ForecastCityViewController: UITableViewDataSource {
         let object = viewModel.dataSource[indexPath.row]
         
         if let cell = cell as? ForecastTableViewCell {
-                        
-            cell.tempMaxLabel.text = String(object.max_temp!) + "º"
-            cell.humidityLabel.text = String(object.humidity!) + "%"
             
+            if indexPath.row == 0 {
+                self.temperatureLabel.text = String(object.max_temp!) + "º"
+                self.humidityLabel.text = String(object.humidity!) + "%"
+            }
+            
+            let temperature  = Int(round(object.max_temp!))
+            cell.tempMaxLabel.text = String(temperature) + "º"
+            
+            cell.humidityLabel.text = String(object.humidity!) + "%"
+            cell.dayLabel.text = formatter.string(from: object.applicable_date!)
+    
+            self.activityIndicator.stopAnimating()
         }
-        
         return cell
     }
 }

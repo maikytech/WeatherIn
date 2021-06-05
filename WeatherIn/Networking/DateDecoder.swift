@@ -6,6 +6,7 @@
 //
 
 //"applicable_date":"2021-06-03"
+//"yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
 
 import Foundation
 

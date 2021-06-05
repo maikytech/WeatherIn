@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewModelForecast {
-    
     var refreshData = {
         () -> () in
     }
@@ -24,8 +24,7 @@ class ViewModelForecast {
         
         NetworkingProvider.shared.getForecast(woeid: woeid) { (consolidatedWeather) in
             self.dataSource = consolidatedWeather
-            
-            
+    
         } failure: { (error) in
             print(error.debugDescription)
         }
