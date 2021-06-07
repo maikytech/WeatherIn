@@ -17,24 +17,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="806" height="158"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-c8-NOT">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kJM-c8-NOT">
                         <rect key="frame" x="20" y="11" width="766" height="136"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkW-bB-ryQ">
-                                <rect key="frame" x="0.0" y="58" width="27.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="57.5" width="27.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.2413180452" green="0.87156486359999996" blue="0.1500495691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snow" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-Px-jEz">
-                                <rect key="frame" x="236" y="43" width="50" height="50"/>
+                                <rect key="frame" x="233.5" y="43" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="KBK-qg-uGK"/>
                                     <constraint firstAttribute="height" constant="50" id="jBf-Op-yLB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQZ-bN-6ww">
-                                <rect key="frame" x="494.5" y="58" width="27" height="20.5"/>
+                                <rect key="frame" x="490" y="58" width="27" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -10,7 +10,6 @@ import UIKit
 class ForecastCityViewController: UIViewController {
     
     //MARK: - IBOulets
-    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var forecastImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -39,9 +38,9 @@ class ForecastCityViewController: UIViewController {
     
     private func setupUI() {
         
+        title = city
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
-        cityLabel.text = city
         
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
@@ -83,8 +82,12 @@ extension ForecastCityViewController: UITableViewDataSource {
         if let cell = cell as? ForecastTableViewCell {
             
             if indexPath.row == 0 {
-                self.temperatureLabel.text = String(object.max_temp!) + "º"
+                
+                let temperature = Int(round(object.max_temp!))
+                self.temperatureLabel.text = String(temperature) + "º"
+                //self.temperatureLabel.text = String(object.max_temp!) + "º"
                 self.humidityLabel.text = String(object.humidity!) + "%"
+                self.forecastImageView.image = UIImage(named: object.weather_state_name!)
             }
             
             let temperature  = Int(round(object.max_temp!))
@@ -92,6 +95,11 @@ extension ForecastCityViewController: UITableViewDataSource {
             
             cell.humidityLabel.text = String(object.humidity!) + "%"
             cell.dayLabel.text = formatter.string(from: object.applicable_date!)
+            
+            if let imageForecast = object.weather_state_name {
+                cell.forecastImageView.image = UIImage(named: imageForecast)
+            }
+            
     
             self.activityIndicator.stopAnimating()
         }
