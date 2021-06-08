@@ -129,9 +129,9 @@
 		6593495A266911B900186A22 /* ViewSearch */ = {
 			isa = PBXGroup;
 			children = (
-				652CC56F26686E51003B1DE8 /* Cell */,
-				652CC56326685A63003B1DE8 /* Search.storyboard */,
 				652CC56726686160003B1DE8 /* SearchViewController.swift */,
+				652CC56326685A63003B1DE8 /* Search.storyboard */,
+				652CC56F26686E51003B1DE8 /* Cell */,
 			);
 			path = ViewSearch;
 			sourceTree = "<group>";
@@ -194,8 +194,8 @@
 		65FEF9E3266946EC007CE3BA /* ViewForecast */ = {
 			isa = PBXGroup;
 			children = (
-				65FEF9FE2669C032007CE3BA /* Cell */,
 				65FEF9EF2669B2FF007CE3BA /* ForecastCityViewController.swift */,
+				65FEF9FE2669C032007CE3BA /* Cell */,
 			);
 			path = ViewForecast;
 			sourceTree = "<group>";

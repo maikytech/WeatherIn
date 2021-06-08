@@ -94,9 +94,9 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        
+
         activityIndicator.startAnimating()
-        
+
         let searchText = searchBar.text!
         if (searchText != "") {
             viewModel.getCity(cityString: searchText, activityIndicator: activityIndicator)
